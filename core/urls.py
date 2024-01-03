@@ -20,6 +20,6 @@ from rest_framework.authtoken import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/auth/", include("authentication.urls")),
-    path("api/notes/", include("notes.urls")),
+    path("api/auth/", include("authentication.urls", namespace="authentication")),
+    path("api/notes/", include("notes.urls", namespace="notes")),
 ]

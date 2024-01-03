@@ -109,7 +109,7 @@ def search(request):
     query = request.query_params.get("q")
 
     if query is None:
-        return Response({[{}]})
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     notes = Note.objects.filter(text__search=query, is_deleted=False, user=request.user)
 

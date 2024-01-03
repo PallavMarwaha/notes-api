@@ -3,6 +3,8 @@ from rest_framework.routers import DefaultRouter
 
 from . import views
 
+app_name = "notes"
+
 
 urlpatterns = [
     path("<int:id>/", views.note_view, name="detail-view"),
