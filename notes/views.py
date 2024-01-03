@@ -108,9 +108,10 @@ def search(request):
     """
     query = request.query_params.get("q")
 
-    notes = Note.objects.filter(
-        text__icontains=SearchQuery(query), is_deleted=False, user=request.user
-    )
+    if query is None:
+        return Response({[{}]})
+
+    notes = Note.objects.filter(text__search=query, is_deleted=False, user=request.user)
 
     serializer = NoteSerializer(notes, many=True)
 
