@@ -102,6 +102,11 @@ python manage.py runserver
    - Open your web browser and navigate to [http://localhost:8000/](http://localhost:8000/) to see your project in action.
 
 4. You can access the API documentation and interact with different API endpoints.
+
+5. **Run the tests:**
+```bash
+python manage.py test
+```
 ## Screenshots
 
 ![App Screenshot](https://i.imgur.com/c9ak0eK.jpeg)
